@@ -70,5 +70,7 @@ Install the following libraries via the Arduino Library Manager:
 ## 📄 Sample Output (SD Card: `log.csv`)
 
 Oxygen (mg/L),Humidity (%),Temperature (C)
+
 6.45,42.1,23.6
+
 6.43,42.2,23.6
