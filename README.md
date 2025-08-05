@@ -35,7 +35,7 @@ This Arduino-based project collects real-time data on **oxygen concentration**, 
 - **10kΩ Resistor** between DATA and VCC
 
 ### DFRobot Oxygen Sensor (I²C):
-- **VCC** → 5V  
+- **VCC** → 3.3V  
 - **GND** → GND  
 - **SDA** → A4 (Uno/Nano)  
 - **SCL** → A5 (Uno/Nano)
