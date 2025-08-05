@@ -1,0 +1,68 @@
+#include <Wire.h>
+#include <DFRobot_OxygenSensor.h>
+#include <DHT.h>
+#include <SD.h>
+
+
+// --- Sensor Definitions ---
+#define DHTPIN 2
+#define DHTTYPE DHT22
+DHT dht(DHTPIN, DHTTYPE);
+
+
+#define Oxygen_IICAddress ADDRESS_3
+#define COLLECT_NUMBER 10
+DFRobot_OxygenSensor oxygen;
+
+
+// --- SD Card Chip Select ---
+const int chipSelect = 10;
+bool headerWritten = false;
+
+
+void setup() {
+ // Int DHT22 Sensor
+ Serial.begin(9600);
+  dht.begin();
+
+// Int O2 Sensor
+  while (!oxygen.begin(Oxygen_IICAddress)) {
+    delay(1000);
+  }
+
+  // Int SD Card
+  if (!SD.begin(chipSelect)) {
+    while (true);
+  }
+
+
+  // Int SD File
+  File dataFile = SD.open("log.csv", FILE_WRITE);
+  if (dataFile) {
+    dataFile.println("O2(%), Humidity(%), Temp(C)");
+    dataFile.close();
+    headerWritten = true;
+  }
+}
+
+// Collecting Data Values 
+void loop() {
+  float oxygenData = oxygen.getOxygenData(COLLECT_NUMBER);  //Calibrate O2 Sensor By Pressing and Holding Button for 2 seconds
+  float hum = dht.readHumidity();
+  float temp = dht.readTemperature();
+
+// Saving Data to log.csv file on SD Card
+  File dataFile = SD.open("log.csv", FILE_WRITE);
+  if (dataFile) {
+    dataFile.print(oxygenData, 2);
+    dataFile.print(", ");
+    dataFile.print(hum, 1);
+    dataFile.print(", ");
+    dataFile.println(temp, 1);
+    dataFile.close();
+  }
+
+
+  delay(2000);   // Time in ms
+}
+
