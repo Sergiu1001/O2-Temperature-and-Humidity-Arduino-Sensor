@@ -26,7 +26,7 @@ This Arduino-based project collects real-time data on **oxygen concentration**, 
 ---
 
 ## Wiring Instructions
-[O2&TempSensor.pdf](https://github.com/user-attachments/files/21607250/O2.TempSensor.pdf)
+<img width="762" height="884" alt="Image" src="https://github.com/user-attachments/assets/9ed8ef73-76bf-4ed8-ac2f-0f0d3bf77755" />
 
 ### DHT22 Sensor:
 - **VCC** → 5V  
