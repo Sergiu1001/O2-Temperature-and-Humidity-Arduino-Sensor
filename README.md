@@ -1,14 +1,14 @@
 # O2-Temperature-and-Humidity-Arduino-Sensor
 
 
-This Arduino-based project collects real-time data on **oxygen concentration**, **temperature**, and **humidity**, and logs the data to a microSD card in `.csv` format for later analysis. It uses a **DFRobot Oxygen Sensor (Gravity I²C)**, a **DHT22 sensor**, and an **SD card module** for data storage.
+This Arduino-based project collects real-time data on **oxygen concentration**, **temperature**, and **humidity**, and logs the data to a microSD card in `.csv` format for later analysis. It uses a **DFRobot Oxygen Sensor (Gravity I2C)**, a **DHT22 sensor**, and an **SD card module** for data storage.
 
-## 🚀 Features
+## Features
 
 - Logs oxygen concentration (mg/L), humidity (%), and temperature (°C)
-- Writes to an SD card in CSV format (for easy import into Excel or Python)
+- Writes to an SD card in CSV format 
 - Low-memory usage and lightweight code structure
-- Ideal for environmental sensing, school research projects, and microclimate analysis
+- Ideal for environmental sensing, dry box maintenance, and microclimate analysis
 
 ---
 
@@ -34,7 +34,7 @@ This Arduino-based project collects real-time data on **oxygen concentration**, 
 - **DATA** → Pin 2 on Arduino  
 - **10kΩ Resistor** between DATA and VCC
 
-### DFRobot Oxygen Sensor (I²C):
+### DFRobot Oxygen Sensor (I2C):
 - **VCC** → 3.3V  
 - **GND** → GND  
 - **SDA** → A4 (Uno/Nano)  
@@ -50,7 +50,7 @@ This Arduino-based project collects real-time data on **oxygen concentration**, 
 
 ---
 
-## 📥 Arduino Libraries Required
+## Arduino Libraries Required
 
 Install the following libraries via the Arduino Library Manager:
 
@@ -67,7 +67,7 @@ Install the following libraries via the Arduino Library Manager:
 
 ---
 
-## 📄 Sample Output (SD Card: `log.csv`)
+## Sample Output (SD Card: `log.csv`)
 
 Oxygen (mg/L),Humidity (%),Temperature (C)
 
